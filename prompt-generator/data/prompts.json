@@ -1,0 +1,10 @@
+{
+  "eventTitle": "Build with AI Ramadan'26",
+  "prompts": [
+    "Create a VPC network named {event_name}-vpc. It should not have any subnets initially.",
+    "In this VPC, create a public subnet named {event_name}-vpc-pub-sub and a private subnet named {event_name}-vpc-priv-sub in the europe-west1 region. Choose appropriate /24 CIDRs for both subnets.",
+    "Create a firewall rule named {event_name}-allow-http that allows incoming traffic on TCP port 80 from 0.0.0.0/0 to all instances in the {event_name}-vpc network.",
+    "Launch a VM named {event_name}-pub-web-server in the public subnet (region: europe-west1, type: e2-micro, OS: Ubuntu 22.04) that automatically installs nginx and creates /var/www/html/index.html with the text 'Hello {full_name} from {event_name}!' on startup.",
+    "Send a curl request to the virtual machine to check that the installation is completed successfully."
+  ]
+}
